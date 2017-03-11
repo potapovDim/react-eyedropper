@@ -8,7 +8,6 @@ class EyeDropper extends Component {
   }
   eyeDropper = (e) => {
     const {setColor} = this.props
-    console.log('!!!!!!!!!!!!!!----')
     html2canvas(e.toElement, {
       onrendered: function (canvas) {
         this.canvas = document.createElement('canvas');
@@ -19,21 +18,14 @@ class EyeDropper extends Component {
         this.data = this.ctx.getImageData(0, 0, this.width, this.height).data;
         let { r, g, b } = getCanvasPixelColor(canvas, this.width / 2, this.height / 2);
         setColor({ r, g: b, b: g })
-        console.log(this.data, r, g, b)
       }
     })
+    document.body.style.cursor = 'default'
+    document.removeEventListener('click', this.eyeDropper)
   }
   clicker = (e) => {
-    this.setState({ clicked: !this.state.clicked })
-    console.log('!!!!!!!!')
-    if (this.state.clicked) {
       document.body.style.cursor = 'pointer'
       document.addEventListener('click', this.eyeDropper)
-    }
-    else {
-      document.body.style.cursor = 'default'
-      document.removeEventListener('click', this.eyeDropper)
-    }
   }
   render() {
     return (
