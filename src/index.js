@@ -25,7 +25,7 @@ class App extends Component {
           <div className="container " style={{backgroundColor: `rgb(${r}, ${g}, ${b})`}}>rgb({r}, {g}, {b})</div>
         </div>
         <div className="eye-drop-container">
-          <EyeDropper setColor={this.setColor}/>
+          <EyeDropper initializedColor={this.setColor}/>
         </div>
       </div>
     )
