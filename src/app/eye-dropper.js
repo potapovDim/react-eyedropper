@@ -6,9 +6,9 @@ class EyeDropper extends Component {
   state = {
     clicked: false
   }
-  eyeDropper = (e) => {
+  eyeDropper = ({toElement}) => {
     const {setColor} = this.props
-    html2canvas(e.toElement, {
+    html2canvas(toElement, {
       onrendered: function (canvas) {
         this.canvas = document.createElement('canvas');
         this.canvas.width = this.width = canvas.width;
@@ -23,13 +23,13 @@ class EyeDropper extends Component {
     document.body.style.cursor = 'default'
     document.removeEventListener('click', this.eyeDropper)
   }
-  clicker = (e) => {
+  initEyeDropper = () => {
       document.body.style.cursor = 'pointer'
       document.addEventListener('click', this.eyeDropper)
   }
   render() {
     return (
-      <div className="eye dropper" onClick={this.clicker}>+</div>
+      <div className="eye dropper" onClick={this.initEyeDropper}>+</div>
     )
   }
 }
