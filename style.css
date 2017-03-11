@@ -1,0 +1,48 @@
+.eye.dropper {
+  position: relative;
+  background-color: #09f;
+  margin: 20px auto;
+  width: 20px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  height: 20px;
+  border-radius: 200px;
+}
+
+.main {
+  display: flex;
+}
+
+.container {
+  margin-left: 10px; 
+  margin-right: 10px; 
+  border-radius: 10px;
+  text-align: center;
+  text-justify: center;
+  font-size: 20px;
+  width: 150px;
+  height: 50px;
+}
+.first {
+  background: rgb(106, 0, 0);
+}
+.second {
+  background: rgb(106, 124, 0);
+}
+.third {
+  background: rgb(106, 124, 138);
+}
+.fourth {
+  background: rgb(15, 124, 138);
+}
+.fifth {
+  background: rgb(15, 44, 138);
+}
+.sixth {
+  background: rgb(219, 238, 97);
+}
+
+.eye-drop-container {
+  align-content: center;
+}
