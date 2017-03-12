@@ -70,4 +70,4 @@ https://github.com/bfred-it/get-canvas-pixel-color/
 https://github.com/niklasvh/html2canvas
 
 ## License
-
+ISC

@@ -36,5 +36,5 @@ class App extends Component {
     )
   }
 }
-string
+
 export default App
