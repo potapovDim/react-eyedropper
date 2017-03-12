@@ -1,6 +1,6 @@
 {
   "name": "react-eyedropper",
-  "version": "0.0.2",
+  "version": "0.0.2-rc",
   "description": "React eye dropper",
   "main": "index.js",
   "scripts": {
