@@ -22,6 +22,7 @@ class App extends Component {
           <div className="container fourth">rgb(15, 124, 138)</div>
           <div className="container fifth">rgb(15, 44, 138)</div>
           <div className="container sixth">rgb(219, 238, 97)</div>
+          <div className="container seventch">gradient</div>
           <div className="container " style={{backgroundColor: `rgb(${r}, ${g}, ${b})`}}>rgb({r}, {g}, {b})</div>
         </div>
         <div className="eye-drop-container">
