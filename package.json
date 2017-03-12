@@ -2,10 +2,9 @@
   "name": "react-eyedropper",
   "version": "0.0.2-rc",
   "description": "React eye dropper",
-  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -o",
-    "build": "webpack webpack.build.js"
+    "compile": "babel src/app/eye-dropper.js --out-file index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,9 @@
     "react",
     "eye dropper"
   ],
+  "entry": {
+    "eye-dropper": ["./index.js"]
+  },
   "homepage": "https://github.com/potapovDim/react-eyedropper#readme",
   "dependencies": {
     "get-canvas-pixel-color": "^1.0.0",
