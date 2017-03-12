@@ -66,6 +66,7 @@ props | description
 ## Dependencies
 
 https://github.com/bfred-it/get-canvas-pixel-color/
+<br>
 https://github.com/niklasvh/html2canvas
 
 ## License
