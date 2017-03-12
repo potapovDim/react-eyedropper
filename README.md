@@ -57,7 +57,7 @@ npm install --save react-eyedropper
 
 props | description
 --- | ---
-**`initializedColor`** | Type: `function` , *required* <br> callback arg of func is {r,g,b}
+**`initializedColor`** | Type: `function` , *required* <br> callback, arg  is object  {r,g,b}
 **`className`** | Type: `string`, <br> for style
 **`title`** | Type: `string`, <br> title 
 

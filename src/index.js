@@ -6,7 +6,6 @@ class App extends Component {
     r: 255,
     g: 255,
     b: 255
-
   }
   setColor = ({ r, g, b }) => {
     this.setState({ r, g, b })
@@ -37,5 +36,5 @@ class App extends Component {
     )
   }
 }
-
+string
 export default App
