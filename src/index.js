@@ -23,11 +23,16 @@ class App extends Component {
           <div className="container fifth">rgb(15, 44, 138)</div>
           <div className="container sixth">rgb(219, 238, 97)</div>
           <div className="container seventch">gradient</div>
-          <div className="container " style={{backgroundColor: `rgb(${r}, ${g}, ${b})`}}>rgb({r}, {g}, {b})</div>
         </div>
+          <div className="result">
+            <div className="container " style={{backgroundColor: `rgb(${r}, ${g}, ${b})`}}>rgb({r}, {g}, {b})</div>
+          </div>
         <div className="eye-drop-container">
           <EyeDropper initializedColor={this.setColor}/>
         </div>
+        <div id="container">
+		      <img src="./test.jpg" id="sample"/>
+	      </div>
       </div>
     )
   }

@@ -10,7 +10,13 @@
   height: 20px;
   border-radius: 200px;
 }
-
+.result {
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  margin-top: 100px;
+  margin-left: 43%;
+}
 .main {
   display: flex;
 }
@@ -56,5 +62,22 @@
  }
 
 .eye-drop-container {
+  align-content: center;
+}
+
+#sample, #container { 
+  border-radius: 600px; 
+  box-shadow: 0 0 1px #000; }
+#sample { 
+  cursor: crosshair; 
+  margin: 50px; 
+  width: 500px; 
+  height: 500px; 
+  position: center; }
+#container {
+  margin-left: 27%;
+  position: relative; 
+  float: left; position: center;  
+  align-items: center;
   align-content: center;
 }
