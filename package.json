@@ -1,6 +1,6 @@
 {
   "name": "react-eyedropper",
-  "version": "0.0.2-beta",
+  "version": "0.0.2",
   "description": "React eye dropper",
   "main": "index.js",
   "scripts": {
@@ -24,12 +24,12 @@
   "dependencies": {
     "get-canvas-pixel-color": "^1.0.0",
     "html2canvas": "^0.5.0-beta4",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "react": "^15.4.1"
   },
   "devDependencies": {
-    "install": "^0.8.7",
     "node-uuid": "^1.4.7",
+    "install": "^0.8.7",
     "npm": "^4.4.1",
     "webpack-dev-server": "^1.16.2",
     "webpack": "^1.14.0",
@@ -41,7 +41,6 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
-    "babel-register": "^6.9.0",
-    "react-eyedropper": "0.0.1"
+    "babel-register": "^6.9.0"
   }
 }
