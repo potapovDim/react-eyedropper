@@ -1,6 +1,7 @@
 # react-eyedropper
 
-
+##Screenshots
+<img src="./screen.gif" width="550"/>
 
 ## Usage
 
