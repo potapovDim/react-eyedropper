@@ -3,6 +3,11 @@
 ##Screenshots
 <img src="./screen.gif" width="550"/>
 
+## Install
+```sh
+npm install --save react-eyedropper
+```
+
 ## Usage
 
 ```js
@@ -49,9 +54,7 @@ class App extends Component {
 ```
 
 
-```sh
-npm install --save react-eyedropper
-```
+
 ## API
 
 ### `<EyeDropper initializedColor={this.setColor}/>`
