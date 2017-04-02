@@ -6,16 +6,15 @@ class EyeDropper extends Component {
   static propTypes = {
     title: PropTypes.string,
     className: PropTypes.string,
-    initializedColor: PropTypes.func.isRequired
+    initializedColor: PropTypes.func.isRequired,
+    onInit: PropTypes.func
   }
   eyeDropper = (e) => {
     const {initializedColor} = this.props
-    html2canvas(e.toElement, {
+    html2canvas(e.target, {
       onrendered: function (canvas) {
-        console.log(e.offsetX,e.offsetY )
         const x = e.offsetX==undefined ? e.layerX: e.offsetX
         const y = e.offsetY==undefined ? e.layerY: e.offsetY
-        console.log(canvas.width, canvas.height)
         const { r, g, b } = getCanvasPixelColor(canvas, x, y)
         initializedColor({ r, g: b, b: g })
       }
@@ -23,14 +22,15 @@ class EyeDropper extends Component {
     document.body.style.cursor = 'default'
     document.removeEventListener('click', this.eyeDropper)
   }
-  initEyeDropper = () => {
-      document.body.style.cursor = 'pointer'
-      document.addEventListener('click', this.eyeDropper)
+  initEyeDropper = (event) => {
+    this.props.onInit && this.props.onInit()
+    document.body.style.cursor = 'cell'
+    document.addEventListener('click', this.eyeDropper, true)
   }
   render() {
     const {className, title } = this.props
     const classNameComponent = className ? className : "eye dropper"
-    const titleComponent = title ? title : '+' 
+    const titleComponent = title ? title : '+'
     return (
       <div className={classNameComponent} onClick={this.initEyeDropper}>{titleComponent}</div>
     )
