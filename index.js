@@ -43,12 +43,10 @@ var EyeDropper = function (_Component) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EyeDropper.__proto__ || Object.getPrototypeOf(EyeDropper)).call.apply(_ref, [this].concat(args))), _this), _this.eyeDropper = function (e) {
       var initializedColor = _this.props.initializedColor;
 
-      (0, _html2canvas2.default)(e.toElement, {
+      (0, _html2canvas2.default)(e.target, {
         onrendered: function onrendered(canvas) {
-          console.log(e.offsetX, e.offsetY);
           var x = e.offsetX == undefined ? e.layerX : e.offsetX;
           var y = e.offsetY == undefined ? e.layerY : e.offsetY;
-          console.log(canvas.width, canvas.height);
 
           var _getCanvasPixelColor = (0, _getCanvasPixelColor3.default)(canvas, x, y),
               r = _getCanvasPixelColor.r,
@@ -60,9 +58,10 @@ var EyeDropper = function (_Component) {
       });
       document.body.style.cursor = 'default';
       document.removeEventListener('click', _this.eyeDropper);
-    }, _this.initEyeDropper = function () {
-      document.body.style.cursor = 'pointer';
-      document.addEventListener('click', _this.eyeDropper);
+    }, _this.initEyeDropper = function (event) {
+      _this.props.onInit && _this.props.onInit();
+      document.body.style.cursor = 'cell';
+      document.addEventListener('click', _this.eyeDropper, true);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -89,6 +88,7 @@ var EyeDropper = function (_Component) {
 EyeDropper.propTypes = {
   title: _react.PropTypes.string,
   className: _react.PropTypes.string,
-  initializedColor: _react.PropTypes.func.isRequired
+  initializedColor: _react.PropTypes.func.isRequired,
+  onInit: _react.PropTypes.func
 };
 exports.default = EyeDropper;
