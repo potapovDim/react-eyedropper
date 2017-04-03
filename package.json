@@ -1,6 +1,6 @@
 {
   "name": "react-eyedropper",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "React eye dropper",
   "scripts": {
     "start": "webpack-dev-server -o",
