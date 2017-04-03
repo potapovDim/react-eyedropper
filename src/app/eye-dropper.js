@@ -11,12 +11,20 @@ class EyeDropper extends Component {
   }
   eyeDropper = (e) => {
     const {initializedColor} = this.props
-    html2canvas(e.target, {
+    html2canvas(e.toElement, {
       onrendered: function (canvas) {
+        //console.log(e.toElement)
+        //console.log(canvas)
         const x = e.offsetX==undefined ? e.layerX: e.offsetX
         const y = e.offsetY==undefined ? e.layerY: e.offsetY
-        const { r, g, b } = getCanvasPixelColor(canvas, x, y)
+        console.log(getCanvasPixelColor(canvas, x, y))
+        const { r, g, b, a } = getCanvasPixelColor(canvas, x, y)
+        if(a === 0){
+          initializedColor({ r:255, g: 255, b: 255 })
+          return
+        }
         initializedColor({ r, g: b, b: g })
+        console.log(a)
       }
     })
     document.body.style.cursor = 'default'

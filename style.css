@@ -38,7 +38,7 @@
   background: rgb(106, 124, 0);
 }
 .third {
-  background: rgb(106, 124, 138);
+  background: rgba(106, 124, 138, 0.5);
 }
 .fourth {
   background: rgb(15, 124, 138);
@@ -49,7 +49,10 @@
 .sixth {
   background: rgb(219, 238, 97);
 }
-
+.sevent {
+  background: rgb(0, 0, 0);
+  font: red;
+}
  .seventch {
    font-family: 'Open Sans', sans-serif;
    background: #092756;
