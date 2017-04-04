@@ -62,6 +62,7 @@ class App extends Component {
 props | description
 --- | ---
 **`initializedColor`** | Type: `function` , *required* <br> callback, arg  is object  {r,g,b}
+**`onInit`** | Type: `function` ,  <br> pre condition
 **`className`** | Type: `string`, <br> for style
 **`title`** | Type: `string`, <br> title 
 
