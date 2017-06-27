@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './main.js',
+  entry: './src/main.js',
   output: {
     path: './',
     filename: "index.js"
@@ -8,7 +8,6 @@ module.exports = {
     port: 7070,
     historyApiFallback: true
   },
-
   module: {
     loaders: [
       {

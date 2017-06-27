@@ -11,26 +11,26 @@ class EyeDropper extends Component {
   }
   eyeDropper = (e) => {
     const {initializedColor} = this.props
+    const removeEventListener = () => {
+       document.removeEventListener('click', this.eyeDropper)
+    }
     html2canvas(e.toElement, {
       onrendered: function (canvas) {
         const x = e.offsetX==undefined ? e.layerX: e.offsetX
         const y = e.offsetY==undefined ? e.layerY: e.offsetY
-        console.log(getCanvasPixelColor(canvas, x, y))
         const { r, g, b, a } = getCanvasPixelColor(canvas, x, y)
-        if(a === 0){
-          initializedColor({ r:255, g: 255, b: 255 })
-          return
-        }
-        initializedColor({ r, g: b, b: g })
+        a === 0
+          ? initializedColor({ r:255, g: 255, b: 255 })
+          : initializedColor({ r, g: b, b: g })
+        removeEventListener()
       }
     })
     document.body.style.cursor = 'default'
-    document.removeEventListener('click', this.eyeDropper)
   }
   initEyeDropper = (event) => {
     this.props.onInit && this.props.onInit()
     document.body.style.cursor = 'cell'
-    document.addEventListener('click', this.eyeDropper, true)
+    document.addEventListener('click', this.eyeDropper)
   }
   render() {
     const {className, title } = this.props

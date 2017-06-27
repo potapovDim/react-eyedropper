@@ -43,7 +43,10 @@ var EyeDropper = function (_Component) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EyeDropper.__proto__ || Object.getPrototypeOf(EyeDropper)).call.apply(_ref, [this].concat(args))), _this), _this.eyeDropper = function (e) {
       var initializedColor = _this.props.initializedColor;
 
-      (0, _html2canvas2.default)(e.target, {
+      var removeEventListener = function removeEventListener() {
+        document.removeEventListener('click', _this.eyeDropper);
+      };
+      (0, _html2canvas2.default)(e.toElement, {
         onrendered: function onrendered(canvas) {
           var x = e.offsetX == undefined ? e.layerX : e.offsetX;
           var y = e.offsetY == undefined ? e.layerY : e.offsetY;
@@ -51,17 +54,18 @@ var EyeDropper = function (_Component) {
           var _getCanvasPixelColor = (0, _getCanvasPixelColor3.default)(canvas, x, y),
               r = _getCanvasPixelColor.r,
               g = _getCanvasPixelColor.g,
-              b = _getCanvasPixelColor.b;
+              b = _getCanvasPixelColor.b,
+              a = _getCanvasPixelColor.a;
 
-          initializedColor({ r: r, g: b, b: g });
+          a === 0 ? initializedColor({ r: 255, g: 255, b: 255 }) : initializedColor({ r: r, g: b, b: g });
+          removeEventListener();
         }
       });
       document.body.style.cursor = 'default';
-      document.removeEventListener('click', _this.eyeDropper);
     }, _this.initEyeDropper = function (event) {
       _this.props.onInit && _this.props.onInit();
       document.body.style.cursor = 'cell';
-      document.addEventListener('click', _this.eyeDropper, true);
+      document.addEventListener('click', _this.eyeDropper);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
