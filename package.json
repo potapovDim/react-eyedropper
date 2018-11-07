@@ -1,6 +1,6 @@
 {
   "name": "react-eyedropper",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "React eye dropper",
   "scripts": {
     "start": "webpack-dev-server -o",
@@ -29,7 +29,7 @@
     "get-canvas-pixel-color": "^1.0.0",
     "html2canvas": "^0.5.0-beta4",
     "react-dom": "^15.6.1",
-    "react": "^15.6.1"
+    "react": "^16.6.1"
   },
   "devDependencies": {
     "babel": "6.5.2",
