@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: './',
+    path: '/',
     filename: "index.js"
   },
   devServer: {
@@ -9,13 +9,13 @@ module.exports = {
     historyApiFallback: true
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js?$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0'],
+          presets: ['@babel/preset-react', '@babel/preset-env'],
         }
       }
     ]
